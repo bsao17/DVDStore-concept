@@ -1,14 +1,21 @@
 package com.mycompany.service;
 
 import com.mycompany.entity.Movie;
-import com.mycompany.repository.MovieRepository;
+import com.mycompany.repository.GoLiveMovieRepository;
+import com.mycompany.repository.GoLiveMovieRepositoryInterface;
 
-public class MovieService {
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-    MovieRepository movieRepository = new MovieRepository();
+public class MovieService implements MovieServiceInterface {
 
-    public void registerMovie(Movie movie){
-       movieRepository.add(movie);
-       System.out.printf("The movie with title and genre %s has been added", movie.getTitleAndGenre());
+    GoLiveMovieRepository goLiveMovieRepository = new GoLiveMovieRepository();
+
+    public MovieService() throws IOException {
+    }
+
+    @Override
+    public void registerMovie() {
+       goLiveMovieRepository.add();
     }
 }

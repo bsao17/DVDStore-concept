@@ -8,7 +8,7 @@ import java.io.IOException;
 public class App 
 {
     public static void main( String[] args ) throws IOException {
-        GoLiveMovieRepository goLiveMovieRepository = new GoLiveMovieRepository();
-        goLiveMovieRepository.add();
+        MovieConroller movieConroller = new MovieConroller();
+        movieConroller.add();
     }
 }
