@@ -1,0 +1,6 @@
+# Cache IDE
+.idea
+.vscode
+
+# Build directory
+target
