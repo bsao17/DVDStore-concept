@@ -9,12 +9,12 @@ import java.io.IOException;
 
 public class MovieService implements MovieServiceInterface {
 
-    GoLiveMovieRepository goLiveMovieRepository = new GoLiveMovieRepository();
+    GoLiveMovieRepositoryInterface goLiveMovieRepository = new GoLiveMovieRepository();
 
     public MovieService() throws IOException {
     }
 
-    @Override
+
     public void registerMovie() {
        goLiveMovieRepository.add();
     }
