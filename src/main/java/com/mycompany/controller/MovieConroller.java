@@ -1,19 +1,21 @@
 package com.mycompany.controller;
-
-import com.mycompany.entity.Movie;
-import com.mycompany.service.MovieService;
+import com.mycompany.service.MovieServiceInterface;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
 
-public class MovieConroller {
-    MovieService movieService = new MovieService();
+public class MovieConroller implements MovieControllerInterface{
+    private MovieServiceInterface movieService;
 
-    public MovieConroller() throws IOException {
+    public void add() throws FileNotFoundException {
+        movieService.registerMovie();
     }
 
-    public void add() {
-        movieService.registerMovie ();
+    public MovieServiceInterface getMovieService() {
+        return movieService;
     }
+
+    public void setMovieService(MovieServiceInterface movieService) {
+        this.movieService = movieService;
+    }
+
 }

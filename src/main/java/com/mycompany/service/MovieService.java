@@ -1,21 +1,20 @@
 package com.mycompany.service;
 
-import com.mycompany.entity.Movie;
-import com.mycompany.repository.GoLiveMovieRepository;
 import com.mycompany.repository.GoLiveMovieRepositoryInterface;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class MovieService implements MovieServiceInterface {
 
-    GoLiveMovieRepositoryInterface goLiveMovieRepository = new GoLiveMovieRepository();
-
-    public MovieService() throws IOException {
-    }
-
+    GoLiveMovieRepositoryInterface goLiveMovieRepository;
 
     public void registerMovie() {
        goLiveMovieRepository.add();
+    }
+
+    public GoLiveMovieRepositoryInterface getGoLiveMovieRepository() {
+        return goLiveMovieRepository;
+    }
+
+    public void setGoLiveMovieRepository(GoLiveMovieRepositoryInterface goLiveMovieRepository) {
+        this.goLiveMovieRepository = goLiveMovieRepository;
     }
 }
